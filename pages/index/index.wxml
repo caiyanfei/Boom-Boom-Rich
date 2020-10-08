@@ -1,0 +1,67 @@
+<!--index.wxml-->
+<!--
+<view class="container">
+  <view class=".weui-btn">
+    <button class='weui-btn-area'  plain="{{plain}}" hover-class="button-hover"
+        disabled="{{disabled}}" bindtap="toCalc"> {{motto}} </button>
+    <button class='weui-btn-area' plain="{{plain}}"    hover-class="button-hover"
+     disabled="{{disabled}}" bindtap=""> 函数绘制 </button>
+     <button class='weui-btn-area' plain="{{plain}}"    hover-class="button-hover"
+     disabled="{{disabled}}" bindtap=""> 高级计算 </button>
+  </view>
+  -->
+
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">万能计算器</view>
+</cu-custom>
+
+  <scroll-view scroll-x class="bg-green nav text-center">
+  <view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap="toCalc" data-id="0">
+    <text class="cuIcon-camerafill"></text> 科学计算器
+  </view>
+  <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="1">
+    <text class="cuIcon-upstagefill"></text> 函数图像绘制
+  </view>
+  <view class="cu-item {{2==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="2">
+    <text class="cuIcon-clothesfill"></text> 高级功能
+  </view>
+</scroll-view>
+
+<view class='box'>
+     <view class='txt'>{{screenNum}}</view> 
+    <view capture-bind:touchstart="compute">
+     <view>
+       <button data-val='clear' class='boxtn btn1'>AC</button>
+       <button data-val='back' class='boxtn btn1'>←</button>
+       <button data-val='#' class='boxtn btn1'>#</button>
+       <button data-val='/' class='boxtn btn'>/</button>
+     </view>
+       <view>
+       <button data-val='7' class='boxtn'>7</button>
+       <button data-val='8' class='boxtn'>8</button>
+       <button data-val='9' class='boxtn'>9</button>
+       <button data-val='*' class='boxtn btn'>*</button>
+     </view>
+       <view>
+       <button data-val='4' class='boxtn'>4</button>
+       <button data-val='5' class='boxtn'>5</button>
+       <button data-val='6' class='boxtn'>6</button>
+       <button data-val='-' class='boxtn btn'>-</button>
+     </view>
+       <view>
+       <button data-val='1' class='boxtn'>1</button>
+       <button data-val='2' class='boxtn'>2</button>
+       <button data-val='3' class='boxtn'>3</button>
+       <button data-val='+' class='boxtn btn'>+</button>
+     </view>
+       <view>
+       <button data-val='0' class='boxtn btn2'>0</button>
+       <button data-val='.' class='boxtn'>.</button>
+       <button data-val='=' class='boxtn btn'>=</button>
+     </view>
+    </view>
+</view>
+
+  
+

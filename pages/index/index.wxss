@@ -1,0 +1,101 @@
+/**index.wxss**/
+.userinfo {
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  /*width:256rpx;*/
+  /*height: 512rpx;*/
+}
+
+.userinfo-avatar {
+  width: 128px;
+  height: 128px;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  margin-top:80px;
+}
+
+.usermotto {
+  margin-top: 35%;
+}
+
+/** 修改button默认的点击态样式类**/
+.button-hover {
+  background-color: red;
+}
+
+/** 修改默认的navigator点击态 **/
+.navigator-hover {
+    color:blue;
+}
+.github{
+  color: green;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 5px;
+}
+.icon{
+  vertical-align: middle;
+  margin-right: 2px;
+}
+.boxtn{
+  width: 90px;
+  height:90px;
+  display:block;
+  float:left;
+  border-radius: 35%;
+  line-height: 90px;
+  text-align: center;
+  margin-left: 3px;
+  margin-top: 5px;
+  color:#fff;
+  background: #6e8b74;
+  font-weight: bold;
+  font-size: 25px;
+}
+.btn2{
+  width: 130px;
+  border-radius: 30px;
+}
+.box{
+  width:100%;
+  height: 700px;
+  background: #eef7f2
+}
+.txt{
+  color: #1a6840;
+  width: 100%;
+  height:120px;
+  font-size: 50px;
+  text-align: right;
+}
+.boxtn{
+  width: 90px;
+  height:90px;
+  display:block;
+  float:left;
+  border-radius: 35%;
+  line-height: 90px;
+  text-align: center;
+  margin-left: 3px;
+  margin-top: 5px;
+  color:#fff;
+  background: #6e8b74;
+  font-weight: bold;
+  font-size: 25px;
+}
+.btn{
+  background: #9eccab;
+}
+.btn1{
+  background: #b9dec9;
+  color:#000;
+}
+.btn2{
+  width: 180px;
+  border-radius: 40px;
+}

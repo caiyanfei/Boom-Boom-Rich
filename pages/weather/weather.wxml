@@ -1,0 +1,95 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">天气穿衣小助手</view>
+</cu-custom>
+
+<view class='container'>
+  <view style="border-radius:10px; background:#fff;display:block; width:100%;">
+    <view style="padding:10px;">
+      <image mode="widthFix" src="/img/icon1.png" style="width:50rpx;height:50rpx;vertical-align: middle;" /> {{weatherweek.city}}</view>
+    <view style="padding:20px 0;">
+      <view style="font-size:48px;">{{weatherweek.data[0].tem}}℃</view>
+      <view style="font-size:18px;">{{weatherweek.data[0].wea}}</view>
+    </view>
+  </view>
+  
+<!--2-->
+  <view style="margin-top:10px; padding:10px 0; border-radius:10px; background:#fff;display:block; width:100%;">
+    <block wx:for="{{weatherweek.data}}">
+      <view class="weui-flex" style="padding-bottom:10px;">
+        <view class="weui-flex__item">{{item.week}}</view>
+        <view class="weui-flex__item">{{item.wea}}</view>
+        <view class="weui-flex__item">{{item.tem2}} - {{item.tem1}}℃</view>
+      </view>
+    </block>
+  </view>
+<!--./2-->
+</view>
+
+  <view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 穿衣指数
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="Modal">查看</button>
+  </view>
+</view>
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">{{weatherweek.data[0].index[3].level}}</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      {{weatherweek.data[0].index[3].desc}}
+    </view>
+  </view>
+</view>
+
+<!--
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 紫外线指数
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="Modal">查看</button>
+  </view>
+</view>
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">{{weatherweek.data[0].index[1].level}}</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      {{weatherweek.data[0].index[1].desc}}
+    </view>
+  </view>
+</view>
+     
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 空气污染扩散指数
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="Modal">查看</button>
+  </view>
+</view>
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">{{weatherweek.data[0].index[5].level}}</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      {{weatherweek.data[0].index[5].desc}}
+    </view>
+  </view>
+</view>
+-->

@@ -1,0 +1,51 @@
+{
+  "pages": [ 
+    
+    "pages/index/index",
+    "pages/calc/calc",
+    "pages/logs/logs",
+    "pages/index2/index2",
+    "pages/index3/index3",
+    "pages/weather/weather",
+    "pages/clothes/clothes",
+    "pages/relatives/relatives",
+    "pages/majiang/majiang",
+    "pages/tocalclothes/todress/todress",
+    "pages/tocalclothes/tosuit/tosuit",
+    "pages/tocalclothes/totrouses/totrouses",
+    "pages/tocalclothes/toshirt/toshirt",
+    "pages/tocalclothes/tomshoes/tomshoes",
+    "pages/tocalclothes/tofshoes/tofshoes",
+    "pages/tocalclothes/tocshoes/tocshoes"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "科学计算器"
+      },
+      {
+        "pagePath": "pages/index2/index2",
+        "iconPath":"",
+        "text": "生活管家"
+      },
+      {
+        "pagePath": "pages/index3/index3",
+        "iconPath":"",
+        "text": "过年神器"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "Color UI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap18.json"
+}

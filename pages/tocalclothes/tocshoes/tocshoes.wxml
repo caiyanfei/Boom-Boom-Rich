@@ -1,0 +1,54 @@
+<!--pages/tocalclothes/tocshoes/tocshoes.wxml-->
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='cuIcon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>童鞋</view>
+  </view>
+</view>
+<swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{4}}" wx:key>
+    <image src="https://image.weilanwl.com/img/4x3-{{index+1}}.jpg" mode='aspectFill'></image>
+  </swiper-item>
+</swiper>
+
+<view class="page-section">
+    <view class="weui-cells__title">小朋友常穿的鞋码（25码-35.5码）</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" bindinput="getsize" type="number" placeholder="请输入小朋友的鞋码" />
+      </view>
+    </view>
+  </view>
+  
+  <button bindtap="calsize">计算</button>
+  <view>欧洲尺码（日常）：{{size}}</view>
+  <view>美国尺码：{{american}}</view>
+  <view>英国尺码：{{european}}</view>
+  <view>中国尺码：{{chinese}}</view>
+  
+  <view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 更多尺码信息
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="Image">查看</button>
+  </view>
+</view>
+
+  <view class="cu-modal {{modalName=='Image'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="bg-img" style="background-image: url('https://s1.ax1x.com/2020/10/08/00FeA0.jpg');height:100px;">
+      <view class="cu-bar justify-end text-white">
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close "></text>
+        </view>
+      </view>
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">我知道了</view>
+    </view>
+  </view>
+</view>
+

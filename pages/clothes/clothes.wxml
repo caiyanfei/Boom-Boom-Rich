@@ -1,0 +1,67 @@
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='cuIcon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>穿衣尺码转换</view>
+  </view>
+</view>
+<swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{4}}" wx:key>
+    <image src="https://image.weilanwl.com/img/4x3-{{index+1}}.jpg" mode='aspectFill'></image>
+  </swiper-item>
+</swiper>
+<view class="VerticalBox">
+  <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 375rpx)">
+    <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+      {{item.name}}
+    </view>
+  </scroll-view>
+  <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375rpx)" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+    <view class="padding-top padding-lr" wx:for="{{list}}" wx:key id="main-{{index}}">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='cuIcon-title text-green'></text> {{item.name}} </view>
+      </view>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="content"> 
+            <view class="text-grey" wx:if="{{item.id==0?true:false}}">衬衫</view>
+            <view class="text-grey" wx:elif="{{item.id==1?true:false}}">衬衫</view>  
+            <view class="text-grey" wx:elif="{{item.id==2?true:false}}">男鞋</view> 
+          </view>
+          <button class="cu-btn round bg-red shadow" data-val='shirt'wx:if="{{item.id==0?true:false}}" bindtap="tojump">查看</button> 
+          <button class="cu-btn round bg-red shadow" data-val='shirt'wx:elif="{{item.id==1?true:false}}"bindtap="tojump">查看</button> 
+          <button class="cu-btn round bg-red shadow"  data-val='mshoes'wx:elif="{{item.id==2?true:false}}"bindtap="tojump">查看</button>  
+        </view>
+        
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="content">
+            <view class="text-grey" wx:if="{{item.id==0?true:false}}">连衣裙</view>
+            <view class="text-grey"  wx:elif="{{item.id==1?true:false}}">西装</view> 
+            <view class="text-grey" wx:elif="{{item.id==2?true:false}}">女鞋</view> 
+          </view>
+          <button class="cu-btn round bg-orange shadow" data-val='dress'wx:if="{{item.id==0?true:false}}" bindtap="tojump">查看</button> 
+          <button class="cu-btn round bg-orange shadow" data-val='suit'wx:elif="{{item.id==1?true:false}}"bindtap="tojump">查看</button> 
+          <button class="cu-btn round bg-orange shadow"  data-val='fshoes'wx:elif="{{item.id==2?true:false}}"bindtap="tojump">查看</button>  
+        </view>
+
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="content">
+            <view class="text-grey" wx:if="{{item.id==0?true:false}}">裤子</view> 
+            <view class="text-grey" wx:elif="{{item.id==1?true:false}}">裤子</view> 
+            <view class="text-grey" wx:elif="{{item.id==2?true:false}}">童鞋</view>
+          </view>
+          <button class="cu-btn round bg-yellow shadow" data-val='trouses'wx:if="{{item.id==0?true:false}}" bindtap="tojump">查看</button> 
+          <button class="cu-btn round bg-yellow shadow" data-val='trouses'wx:elif="{{item.id==1?true:false}}"bindtap="tojump">查看</button> 
+          <button class="cu-btn round bg-yellow shadow"  data-val='cshoes'wx:elif="{{item.id==2?true:false}}"bindtap="tojump">查看</button> 
+        </view>
+        </view>
+      </view>
+
+
+  </scroll-view>
+</view>

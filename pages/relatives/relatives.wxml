@@ -1,0 +1,55 @@
+<!--pages/relatives/relatives.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">亲戚关系计算器</view>
+</cu-custom>
+
+<view class='box'>
+  <view class='txt' wx:if="finish==false?true:false">{{namestr}}</view> 
+  <view class="cu-form-group margin-top bg-gray">
+  <view class="title">您应该称呼对方为：{{call}}</view></view>
+	<!--<radio-group bindchange="handleChange">
+        <label class="weui-cell weui-check__label" >
+          <view class="weui-cell__hd">
+            <radio value="男生" checked="true"/>
+          </view>
+          <view class="weui-cell__bd">男</view>
+				</label>
+				<label class="weui-cell weui-check__label" >
+          <view class="weui-cell__hd">
+            <radio value="女生" checked="true"/>
+          </view>
+          <view class="weui-cell__bd">女</view>
+				</label>	
+      </radio-group>-->
+
+  <view class="cu-form-group margin-top bg-gray">
+		<view class="title">您的性别是：</view>
+		<switch class="switch-sex" checked></switch>
+	</view>
+  <view class="text2"></view>
+    <view>
+     <view>
+       <button data-val='clear' class='boxtn btn' bindtap="clear">AC</button>
+       <button data-val='equal' class='boxtn btn' bindtap="compute">=</button>
+       <button data-val='f' class='boxtn' bindtap="addstr">父亲</button>
+       <button data-val='m' class='boxtn' bindtap="addstr">母亲</button>
+     </view>
+       <view>
+       <button data-val='ob' class='boxtn' bindtap="addstr">哥哥</button>
+       <button data-val='lb' class='boxtn' bindtap="addstr">弟弟</button>
+       <button data-val='os' class='boxtn' bindtap="addstr">姐姐</button>
+       <button data-val='ls' class='boxtn' bindtap="addstr">妹妹</button>
+     </view>
+
+       <view>
+       <button data-val='s' class='boxtn' bindtap="addstr">儿子</button>
+       <button data-val='d' class='boxtn' bindtap="addstr">女儿</button>
+       <button data-val='h' class='boxtn' bindtap="addstr">丈夫</button>
+       <button data-val='w' class='boxtn' bindtap="addstr">妻子</button>
+     </view>
+      
+    </view>
+</view>
+
+

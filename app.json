@@ -1,12 +1,11 @@
 {
   "pages": [ 
-    
     "pages/index/index",
-    "pages/calc/calc",
     "pages/logs/logs",
     "pages/index2/index2",
     "pages/index3/index3",
     "pages/weather/weather",
+    "pages/city/city",
     "pages/clothes/clothes",
     "pages/relatives/relatives",
     "pages/majiang/majiang",
@@ -19,21 +18,26 @@
     "pages/tocalclothes/tocshoes/tocshoes"
   ],
   "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "",
-        "selectedIconPath": "",
+        "iconPath": "img/cal.png", 
+        "selectedIconPath": "img/cal-yes.png",       
         "text": "科学计算器"
       },
       {
         "pagePath": "pages/index2/index2",
-        "iconPath":"",
+        "iconPath": "img/life.png",
+        "selectedIconPath": "img/life-yes.png",
         "text": "生活管家"
       },
       {
         "pagePath": "pages/index3/index3",
-        "iconPath":"",
+        "iconPath": "img/newyear.png",
+        "selectedIconPath": "img/newyear-yes.png",
         "text": "过年神器"
       }
     ]
@@ -48,4 +52,5 @@
     "cu-custom": "/colorui/components/cu-custom"
   },
   "sitemapLocation": "sitemap18.json"
+
 }

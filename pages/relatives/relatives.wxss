@@ -7,20 +7,20 @@
 .txt{
   color: #1a6840;
   width: 100%;
-  height:250px;
+  height:500rpx;
   font-size: 40px;
   text-align: right;
 }
 .txt2{
   color: #1a6840;
   width: 100%;
-  height:50px;
+  height:100rpx;
   font-size: 40px;
   text-align: right;
 }
 .boxtn{
-  width: 90px;
-  height:90px;
+  width:180rpx;
+  height:180rpx;
   display:block;
   float:left;
   border-radius: 35%;
@@ -41,6 +41,6 @@
   color:#000;
 }
 .btn2{
-  width: 180px;
-  border-radius: 40px;
+  width: 360rpx;
+  border-radius: 60rpx;
 }

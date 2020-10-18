@@ -1,12 +1,4 @@
 /**index.wxss**/
-.userinfo {
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*align-items: center;*/
-  /*width:256rpx;*/
-  /*height: 512rpx;*/
-}
-
 .userinfo-avatar {
   width: 128px;
   height: 128px;
@@ -43,8 +35,8 @@
   margin-right: 2px;
 }
 .boxtn{
-  width: 90px;
-  height:90px;
+  width: 180rpx;
+  height:180rpx;
   display:block;
   float:left;
   border-radius: 35%;
@@ -73,29 +65,11 @@
   font-size: 50px;
   text-align: right;
 }
-.boxtn{
-  width: 90px;
-  height:90px;
-  display:block;
-  float:left;
-  border-radius: 35%;
-  line-height: 90px;
-  text-align: center;
-  margin-left: 3px;
-  margin-top: 5px;
-  color:#fff;
-  background: #6e8b74;
-  font-weight: bold;
-  font-size: 25px;
-}
+
 .btn{
   background: #9eccab;
 }
 .btn1{
   background: #b9dec9;
   color:#000;
-}
-.btn2{
-  width: 180px;
-  border-radius: 40px;
 }

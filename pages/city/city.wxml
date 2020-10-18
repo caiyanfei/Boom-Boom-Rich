@@ -1,0 +1,27 @@
+<!--city.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">选择城市</view>
+</cu-custom>
+
+<view class="container">
+  <view class="city">
+    <text>当前城市：{{cur_name}}</text>
+  </view>
+
+  <view class="citytable">
+    <block wx:for="{{citylist}}">
+      <view class="province" >{{item.pro}}</view>
+      <view class="leadlist">
+        <block wx:for="{{item.larr}}">
+          <view class="leader">{{item.lea}}</view>
+          <view class="citys">
+          <block wx:for="{{item.carr}}">
+            <text class="cityname" bindtap="selecttap" id="{{item.id}}">{{item.city}}</text>
+          </block>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,18 +1,17 @@
 // pages/relatives/relatives.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data:{
-    gender:"",
+    gender:"",   //性别
     str:"",
     id:0,
     i:0,
-    call:"",
-    namestr:"",
+    call:"",       //转换后的称呼
+    namestr:"",    //当前总共输入的称呼
     finish:false,
-    relation:{         //此关系数据来自github三姑六婆计算器app
+    laststr:"",    //上一个输入的称呼
+    relation:{        
+       //此关系数据来自github三姑六婆计算器app
+      //f:父亲，m:母亲，ob:哥哥,lb:弟弟,os:姐姐,ls:妹妹,xb:兄弟,xs:姐妹,w:妻子,h:丈夫,s:儿子,d:女儿
       'f':['爸爸','父亲','阿爸','老爸','老窦','爸','父','爹','爹爹','爹地','爹啲','老爹','大大','老爷子','老头子'],
       'f,f':['爷爷','祖父','阿爷','奶爷','阿公','老爷'],
       'f,f,f':['曾祖父','太爷','太爷爷','太公','祖公','祖奶爷','太老爷'],
@@ -241,6 +240,7 @@ Page({
       'f,xs,d,d':['表外甥女','姑表甥女','表甥女'],
       'f,os':['姑妈','姑母'],
       'f,ls':['姑妈','姑姐'],
+      'f,w':['妈妈'],
       //外家
       'm':['妈妈','母亲','老妈','阿妈','老母','老妈子','妈','母','娘','娘亲','妈咪'],
       'm,f':['外公','外祖父','姥爷'],
@@ -429,7 +429,8 @@ Page({
 		'm,os':['大姨','大姨妈'],
 		'm,os,h':['大姨父','大姨丈'],
 		'm,ls':['小姨','小姨妈','姨仔'],
-		'm,ls,h':['小姨父','小姨丈'],
+    'm,ls,h':['小姨父','小姨丈'],
+    'm,h':['爸爸'],
 		//婆家
 		'h':['老公','丈夫','先生','官人','男人','汉子','夫','夫君','相公','夫婿','爱人','老伴'],
 		'h,f':['公公','翁亲','老公公'],
@@ -738,26 +739,71 @@ Page({
   }
 
 },
-addstr(e){
+addstr(e){   //当用户新选择一个关系
    var rel=e.target.dataset.val;
    if(this.data.str==""){
      this.setData({str:this.data.str+rel});
      this.setData({namestr:this.data.namestr+this.data.relation[rel][0]});
-    }else{
+     this.setData({laststr:rel})
+    }else{ 
      this.setData({str:this.data.str+','+rel});
      this.setData({namestr:this.data.namestr+"的"+this.data.relation[rel][0]});
-    }
-   
-   
+     this.setData({laststr:rel});
+    }  
 },
+//根据str计算称呼
 compute(e){
-  const now=this.data.str;
-  if(this.data.call==""){
-     if(this.data.relation[now]){
-      this.setData({call:this.data.relation[now][0]});
-    }else{
-      this.setData({call:"关系太远啦，是长辈就标准微笑🙂，是平辈就喊大兄弟吧！"})
-    }
+  var now=this.data.str;
+  if(this.data.call==""){ //简化str
+      for(var i=0;i<4;++i){
+      //父母
+      now=now.replace(/m,h/g,"f");
+      now=now.replace(/f,w/g,"m");
+      //兄弟姐妹
+      now=now.replace(/ob,ob/g,"xb");
+      now=now.replace(/lb,lb/g,"xb");
+      now=now.replace(/os,os/g,"xs");
+      now=now.replace(/ls,ls/g,"xs");
+      now=now.replace(/ob,lb/g,"xb");
+      now=now.replace(/lb,ob/g,"xb");
+      now=now.replace(/os,ls/g,"xs");
+      now=now.replace(/ls,os/g,"xs");
+      now=now.replace(/xb,xb/g,"xb");
+      now=now.replace(/xs,xs/g,"xs");
+      now=now.replace(/xb,xs/g,"xs");
+      now=now.replace(/xs,xb/g,"xb");
+      now=now.replace(/xs,f/g,"f");
+      now=now.replace(/xs,m/g,"m");
+      now=now.replace(/xb,f/g,"f");
+      now=now.replace(/xb,m/g,"m");
+      //父母的子女
+      now=now.replace(/f,d/g,"xs");
+      now=now.replace(/m,d/g,"xs");
+      now=now.replace(/f,s/g,"xb");
+      now=now.replace(/m,s/g,"xb");
+      //孩子
+      now=now.replace(/s,xb/g,"s");
+      now=now.replace(/s,xs/g,"d");
+      now=now.replace(/d,xb/g,"s");
+      now=now.replace(/d,xs/g,"d");
+      //夫妻
+      now=now.replace(/w,s/g,"s");
+      now=now.replace(/w,d/g,"d");
+      now=now.replace(/h,s/g,"s");
+      now=now.replace(/h,d/g,"d");
+      now=now.replace(/w,h,/g,"");
+      now=now.replace(/h,w,/g,"");
+      now=now.replace(/s,m,/g,"");
+      now=now.replace(/s,f,/g,"");
+      now=now.replace(/d,m,/g,"");
+      now=now.replace(/d,f,/g,"");
+      }
+      this.setData({str:now});
+      if(this.data.relation[now]){
+         this.setData({call:this.data.relation[now][0]});
+      }else{
+      this.setData({call:"关系还不清楚哦，是长辈就标准微笑🙂，是平辈就喊大兄弟吧！"})
+      }
   }else{
     if(this.data.relation[now][this.data.i+1]){
       this.setData({call:this.data.relation[now][this.data.i+1]});
@@ -767,75 +813,19 @@ compute(e){
     }
   }
   this.setData({finish:true})
-
-
 },
+//清空数据
 clear(e){
   this.setData({str:""});
   this.setData({call:""});
   this.setData({i:0});
   this.setData({namestr:""});
-  this.setData({finish:false})
-  
+  this.setData({finish:false});
+  this.setData({laststr:""})
 },
 handleChange(e){
    console.log(e);
    let gender=e.detail.value;
     this.setData({gender})
 },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

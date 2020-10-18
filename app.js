@@ -16,6 +16,13 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
   },
+    //自定义全局方法
+    setlocal:function(id,val){
+      wx.setStorageSync(id, val);//API：设置本地缓存
+    },
+    //自定义全局属性
+    curid:"CN101010100",
+    version:"1.0",
 
   getUserInfo:function(cb){
     var that = this;

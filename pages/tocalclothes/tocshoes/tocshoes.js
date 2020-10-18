@@ -1,16 +1,22 @@
 // pages/tocalclothes/tocshoes/tocshoes.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    size:'25',
-    american:"8C",
-    european:"7.5",
-    chinese:"14"
+    size:'',
+    american:"",
+    european:"",
+    chinese:""
   },
-
+  //根据用户选择偏大偏小改变尺码
+  change(e){
+    this.setData({size:''})
+    if(e.target.dataset.val=='0'){
+      this.setData({size:this.data.size+1})
+    }
+    if(e.target.dataset.val=='2'){
+      this.setData({size:this.data.size-1})
+    }  
+  },
+ //模态框显示与关闭
   showModal(e) {
     this.setData({
       modalName: e.currentTarget.dataset.target
@@ -21,10 +27,11 @@ Page({
       modalName: null
     })
   },
-
+//获取用户输入size
   getsize:function(e){
     this.setData({size:e.detail.value})
   },
+//转化size
   calsize(e){
     switch(this.data.size){
       case '25': {this.setData({european:"7.5",american:"8C",chinese:"14"}); break;}
@@ -36,6 +43,7 @@ Page({
       case '32': {this.setData({european:"13.5",american:"1Y",chinese:"20"});break;}
       case '33': {this.setData({european:"1.5",american:"2Y",chinese:"21"});break;}
       case '34': {this.setData({european:"2.5",american:"3Y",chinese:"22"});break;}
+      default : {this.setData({european:"暂无尺码推荐哦，请重新输入",american:"",chinese:""})}
     }
   }
 })

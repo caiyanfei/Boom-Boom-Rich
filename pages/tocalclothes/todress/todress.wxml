@@ -13,6 +13,17 @@
   </swiper-item>
 </swiper>
 
+<view class="cu-bar margin-top bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-green"></text>该品牌衣服尺码是否标准：
+  </view>
+</view>
+  <view class="padding flex flex-wrap justify-between align-center bg-white">
+    <button class="cu-btn round lg line-olive shadow" data-val='2' bindtap="change">偏大</button>
+    <button class="cu-btn round lg line-green shadow" data-val='1' bindtap="change">正常</button>
+    <button class="cu-btn round lg line-cyan shadow" data-val='0' bindtap="change">偏小</button>
+  </view>
+
 <view class="page-section">
     <view class="weui-cells__title">您的身高（单位：厘米）</view>
     <view class="weui-cells weui-cells_after-title">
@@ -30,7 +41,7 @@
     </view>
   </view>
   <button bindtap="calsize">计算</button>
-  <view>衬衫尺码：{{size}}</view>
+  <view>连衣裙尺码：{{size}}</view>
   <view>美国尺码：{{american}}</view>
   <view>英国尺码：{{european}}</view>
   

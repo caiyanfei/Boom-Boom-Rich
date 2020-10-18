@@ -1,16 +1,6 @@
-<!--index.wxml-->
-<!--
-<view class="container">
-  <view class=".weui-btn">
-    <button class='weui-btn-area'  plain="{{plain}}" hover-class="button-hover"
-        disabled="{{disabled}}" bindtap=""> 亲戚关系计算 </button>
-    <button class='weui-btn-area' plain="{{plain}}"    hover-class="button-hover"
-     disabled="{{disabled}}" bindtap=""> 麻将分数计算 </button>
-    
-  </view>
-</view>
--->
-<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+<!--index3.wxml-->
+
+<cu-custom bgColor="bg-gradual-green" isBack="{{false}}">
 	<view slot="backText">返回</view>
 	<view slot="content">过年神器</view>
 </cu-custom>

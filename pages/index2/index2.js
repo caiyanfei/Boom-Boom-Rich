@@ -1,7 +1,7 @@
 const app = getApp();
 Component({
   options: {
-    addGlobalClass: true,
+    addGlobalClass: true, 
   },
   data: {
     StatusBar: app.globalData.StatusBar,
@@ -25,16 +25,10 @@ Component({
       })
     },
   },
-  
-  onLoad: function () {
-    console.log('onLoad');
-    var that = this
-  	//调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
-      })
-    })
-  }
+  onShareAppMessage: function () {     //设置分享界面
+    return {
+      title: '万能计算器',
+      imageUrl: 'https://s1.ax1x.com/2020/10/16/0bh7fs.png'
+    }
+  },
 })

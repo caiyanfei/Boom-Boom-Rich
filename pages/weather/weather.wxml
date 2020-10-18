@@ -3,14 +3,27 @@
 	<view slot="content">天气穿衣小助手</view>
 </cu-custom>
 
-<view class='container'>
+  <view class='container'>
   <view style="border-radius:10px; background:#fff;display:block; width:100%;">
     <view style="padding:10px;">
-      <image mode="widthFix" src="/img/icon1.png" style="width:50rpx;height:50rpx;vertical-align: middle;" /> {{weatherweek.city}}</view>
-    <view style="padding:20px 0;">
-      <view style="font-size:48px;">{{weatherweek.data[0].tem}}℃</view>
-      <view style="font-size:18px;">{{weatherweek.data[0].wea}}</view>
+    <view>
+  </view>
+      <view class="city" bindtap="bindViewTap">
+    <image class="dwicon" src='../../img/icon1.png'></image>
+    <text>当前城市：{{basic.city}}</text>
+    
+    <text class="update">最近更新时间：{{basic.update.loc}}</text>
+    <image class="zbicon" src='../../img/update.png'></image>
+  </view>
     </view>
+    <view style="padding:20px 0;">
+      <view style="font-size:48px;">{{now.tmp}}℃</view>
+      <view style="font-size:18px;">
+      <image mode="widthFix" src="/img/{{now.cond.code}}.png" style="width:50rpx;height:50rpx;vertical-align: middle;" /> 
+      {{now.cond.txt}}|{{now.wind.dir}}{{now.wind.sc}}级</view>
+    </view>
+   
+
   </view>
   
 <!--2-->
@@ -19,6 +32,7 @@
       <view class="weui-flex" style="padding-bottom:10px;">
         <view class="weui-flex__item">{{item.week}}</view>
         <view class="weui-flex__item">{{item.wea}}</view>
+        <image mode="widthFix" src="/img/{{item.wea_img}}.png" style="width:50rpx;height:50rpx;vertical-align: middle;" /> 
         <view class="weui-flex__item">{{item.tem2}} - {{item.tem1}}℃</view>
       </view>
     </block>
@@ -26,9 +40,60 @@
 <!--./2-->
 </view>
 
-  <view class="cu-bar bg-white margin-top">
+<view class="suggestion">
+    <text class="title">生活指数</text>
+
+    <view class="list">
+        <view class="list_l">
+          <image src="../../img/drsg.png"></image>
+          <text>穿衣指数</text>
+        </view>
+        <view class="list_r">
+          <text class="list_t">{{weatherweek.data[0].index[3].level}}</text>
+          <text>{{weatherweek.data[0].index[3].desc}}</text>
+        </view>
+      </view>
+   
+      <view class="list">
+        <view class="list_l">
+          <image src="../../img/cw.png"></image>
+          <text>洗车指数</text>
+        </view>
+        <view class="list_r">
+          <text class="list_t">{{weatherweek.data[0].index[4].level}}</text>
+          <text>{{weatherweek.data[0].index[4].desc}}</text>
+        </view>
+      </view>
+     
+
+      <view class="list">
+        <view class="list_l">
+          <image src="../../img/sport.png"></image>
+          <text>减肥指数</text>
+        </view>
+        <view class="list_r">
+          <text class="list_t">{{weatherweek.data[0].index[1].level}}</text>
+          <text>{{weatherweek.data[0].index[1].desc}}</text>
+        </view>
+      </view>
+
+  
+     
+      <view class="list">
+        <view class="list_l">
+          <image src="../../img/uv.png"></image>
+          <text>空气污染</text>
+        </view>
+        <view class="list_r">
+          <text class="list_t">{{weatherweek.data[0].index[5].level}}</text>
+          <text>{{weatherweek.data[0].index[5].desc}}</text>
+        </view>
+      </view>
+</view>
+      
+<view class="cu-bar bg-gray margin-top">
   <view class="action">
-    <text class="cuIcon-title text-orange "></text> 穿衣指数
+    <text class="cuIcon-title text-blue "></text> 更多今日穿衣推荐
   </view>
   <view class="action">
     <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="Modal">查看</button>
@@ -36,60 +101,40 @@
 </view>
 <view class="cu-modal {{modalName=='Modal'?'show':''}}">
   <view class="cu-dialog">
-    <view class="cu-bar bg-white justify-end">
+    <view class="cu-bar bg-blue justify-end">
       <view class="content">{{weatherweek.data[0].index[3].level}}</view>
       <view class="action" bindtap="hideModal">
         <text class="cuIcon-close text-red"></text>
       </view>
     </view>
     <view class="padding-xl">
-      {{weatherweek.data[0].index[3].desc}}
+      {{clothes}}
     </view>
   </view>
 </view>
 
-<!--
-<view class="cu-bar bg-white margin-top">
-  <view class="action">
-    <text class="cuIcon-title text-orange "></text> 紫外线指数
-  </view>
-  <view class="action">
-    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="Modal">查看</button>
-  </view>
+<!--每日穿搭轮播图片  女生-->
+<view hidden="{{woman}}">    
+  <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+    <image src="{{item.url}}" mode="aspectFit" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
 </view>
-<view class="cu-modal {{modalName=='Modal'?'show':''}}">
-  <view class="cu-dialog">
-    <view class="cu-bar bg-white justify-end">
-      <view class="content">{{weatherweek.data[0].index[1].level}}</view>
-      <view class="action" bindtap="hideModal">
-        <text class="cuIcon-close text-red"></text>
-      </view>
-    </view>
-    <view class="padding-xl">
-      {{weatherweek.data[0].index[1].desc}}
-    </view>
-  </view>
+<!--每日穿搭轮播图片  男生-->
+<view hidden="{{man}}">
+  <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList2}}" wx:key>
+    <image src="{{item.url}}" mode="aspectFit" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
 </view>
-     
-<view class="cu-bar bg-white margin-top">
-  <view class="action">
-    <text class="cuIcon-title text-orange "></text> 空气污染扩散指数
+
+<view class="padding flex flex-wrap justify-between align-center bg-gray">
+    <button class="cu-btn round lg line-blue shadow" data-val='2' bindtap="change">男生</button>
+    <button class="cu-btn round lg line-olive shadow" data-val='1' bindtap="change">女生</button>
   </view>
-  <view class="action">
-    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="Modal">查看</button>
-  </view>
-</view>
-<view class="cu-modal {{modalName=='Modal'?'show':''}}">
-  <view class="cu-dialog">
-    <view class="cu-bar bg-white justify-end">
-      <view class="content">{{weatherweek.data[0].index[5].level}}</view>
-      <view class="action" bindtap="hideModal">
-        <text class="cuIcon-close text-red"></text>
-      </view>
-    </view>
-    <view class="padding-xl">
-      {{weatherweek.data[0].index[5].desc}}
-    </view>
-  </view>
-</view>
--->
+
+

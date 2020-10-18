@@ -1,0 +1,14 @@
+/**index.wxss**/
+.city {padding: 3% 5%; background:#b0d5df; text-align: center;}
+.city text{font-size: 16px; color: #099; }
+
+.citytable{ margin: 5%;}
+.province{ padding: 5px 10px;background:#158bb8;color: #fff;font-size: 14px; font-weight:bold; margin-top: 5%;}
+.province image{ float: right; width: 16px; height:16px;}
+
+.leader{ color: #666; border-top:solid 1px #ccc; background: #eee; padding: 5px 10px; font-size: 14px;  }
+.leader image{ float: right; width: 12px; height:12px; }
+.rotate{transform:rotate(90deg)}
+.citys{ border:solid 1px #eee;  }
+.cityname{ color: #2f90b9; display: inline-block; margin: 5px;font-size: 12px;  }
+.container {height: 100%; background:#f6f8f8; padding:20rpx;font-size:16px;}

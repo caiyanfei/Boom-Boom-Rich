@@ -25,7 +25,7 @@
       </view>
       <view class="cu-list menu-avatar">
         <view class="cu-item">
-          <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="cu-avatar round lg" style="background-image:url(https://s1.ax1x.com/2020/10/17/0OtIOI.png);"></view>
           <view class="content"> 
             <view class="text-grey" wx:if="{{item.id==0?true:false}}">衬衫</view>
             <view class="text-grey" wx:elif="{{item.id==1?true:false}}">衬衫</view>  
@@ -37,7 +37,7 @@
         </view>
         
         <view class="cu-item">
-          <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="cu-avatar round lg" style="background-image:url(https://s1.ax1x.com/2020/10/17/0ONjUK.png);"></view>
           <view class="content">
             <view class="text-grey" wx:if="{{item.id==0?true:false}}">连衣裙</view>
             <view class="text-grey"  wx:elif="{{item.id==1?true:false}}">西装</view> 
@@ -49,7 +49,7 @@
         </view>
 
         <view class="cu-item">
-          <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="cu-avatar round lg" style="background-image:url(https://s1.ax1x.com/2020/10/17/0ONYjA.png);"></view>
           <view class="content">
             <view class="text-grey" wx:if="{{item.id==0?true:false}}">裤子</view> 
             <view class="text-grey" wx:elif="{{item.id==1?true:false}}">裤子</view> 

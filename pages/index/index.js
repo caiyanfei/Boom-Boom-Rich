@@ -21,6 +21,22 @@ Page({
       TabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id-1)*60
     })
+    if(e.currentTarget.dataset.id==0){
+      wx.switchTab({
+        url:'../index/index'
+      })
+    }
+    if(e.currentTarget.dataset.id==1){
+      wx.navigateTo({
+        url:'../function/function'
+      })
+    }
+    if(e.currentTarget.dataset.id==2){
+      wx.navigateTo({
+        url:'../senior/senior'
+      })
+    }
+
   },
 
   //事件处理函数 分页
@@ -29,17 +45,10 @@ Page({
       TabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id-1)*60
     })
-    if(e.currentTarget.dataset.id==0){
-      wx.switchTab({
-        url:'../index/index'
-      })
-    }else{
-      wx.navigateTo({
-      url: '../logs/logs'
-    })
-    }
-  },
-  
+   
+    },
+   
+
   onLoad: function () {
     console.log('onLoad');
     var that = this
@@ -56,7 +65,7 @@ Page({
     var obj = this;
     if (!isNaN(btn_num)) {
       if (obj.data.off == true) {     //上一个运算数字存储结束，开始新一个数字存储
-        obj.data.currentNum = ''
+        obj.data.currentNum = ' '
         obj.data.off = false;
       }
       obj.data.currentNum += btn_num

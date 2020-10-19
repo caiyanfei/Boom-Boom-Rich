@@ -17,7 +17,7 @@
 .city {padding: 3% 5%; background: #58b; overflow: hidden;}
 .city .dwicon{ width: 30rpx; height: 30rpx; float: left; margin: 5px;}
 .city text{font-size: 16px; color:#eee; float: left;}
-.city .zbicon{ width: 30rpx; height: 30rpx; float: right;margin: 8px 5px;}
+.city .zbicon{ width: 30rpx; height: 30rpx; float: right;margin: 16rpx 10rpx;}
 .city .update{ font-size: 12px; float: right; width: 110px;}
 
 /*天气预报*/

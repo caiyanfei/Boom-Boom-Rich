@@ -1,0 +1,54 @@
+<!--选项组件-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">函数图像绘制</view>
+</cu-custom>
+
+<view class="box" >
+  <view class="txt">函数选择</view>
+</view>
+<view class="box">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="txt">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+</view>
+
+<view class="box2">
+<view class="page-section">
+    <view class="weui-cells__title">请输入系数abc:</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input"  bindinput="bindInput" placeholder="以空格作为分隔和结束" value='{{content}}'  />
+        <view class="padding flex flex-wrap justify-between align-center bg-white"> 
+    <button  class="cu-btn lg bg-cyan shadow" bindtap = "drawLine" size='mini'>绘制</button>
+</view>
+      </view>
+    </view>
+</view>
+
+
+<view class="page-section">
+    <view class="weui-cells__title">请输入点坐标xy:</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input"  bindinput="bindInputPoint" placeholder="以空格作为分隔和结束" value='{{pointvalue}}'/>
+        <view class="padding flex flex-wrap justify-between align-center bg-white"> 
+    <button  class="cu-btn lg bg-cyan shadow" bindtap = "drawPoint" size='mini'>绘制</button>
+</view>
+      </view>
+    </view>
+</view>
+
+   
+<view class="padding flex flex-wrap justify-between align-center bg-gray">
+    <button class="cu-btn lg bg-green shadow" bindtap = "clearAll" size='mini'>清除画布</button>
+    <button class="cu-btn lg bg-olive shadow" bindtap = "clearPara" size='mini'>清除参数</button>
+  </view>
+
+</view>
+
+<canvas style="width:750rpx; height:1000rpx;" canvas-id='canvas'></canvas>
+
+  

@@ -1,0 +1,58 @@
+<!--pages/equation/equation.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">复数计算</view>
+</cu-custom>
+
+<view class="page-section">
+    <view class="weui-cells__title">实部</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" bindinput = "bindInput" placeholder = "请输入实部" data-model="realPart1" />
+      </view>
+    </view>
+    <view class="weui-cells__title">虚部</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" bindinput = "bindInput" placeholder = "请输入虚部" data-model="imaginaryPart1" />
+      </view>
+    </view>
+  </view>
+
+
+
+<view class="padding flex flex-wrap justify-between align-center bg-gray">
+    <button class="cu-btn lg line-olive shadow" bindtap = "bindClick" data-text="+">+</button>
+    <button class="cu-btn lg line-green shadow" bindtap = "bindClick" data-text="-">-</button>
+    <button class="cu-btn lg line-cyan shadow" bindtap = "bindClick" data-text="*">*</button>
+    <button class="cu-btn lg line-cyan shadow" bindtap = "bindClick" data-text="/">/</button>
+  </view>
+
+
+<view class="page-section">
+    <view class="weui-cells__title">实部</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" bindinput = "bindInput" placeholder = "请输入实部" data-model="realPart2" />
+      </view>
+    </view>
+    <view class="weui-cells__title">虚部</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input"bindinput = "bindInput" placeholder = "请输入虚部" data-model="imaginaryPart2" />
+      </view>
+    </view>
+  </view>
+
+<view>
+    <button bindtap = "clearAll">清除</button>
+</view>
+  
+
+<view class="txt">
+    计算结果:{{content}}
+</view>
+  
+  
+
+  

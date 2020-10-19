@@ -4,10 +4,19 @@
 	<view slot="content">选择城市</view>
 </cu-custom>
 
-<view class="container">
-  <view class="city">
-    <text>当前城市：{{cur_name}}</text>
+
+<view class="page-section">
+    <view class="weui-cells__title">选择城市</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" bindinput="getcity" type="text" placeholder="请输入您要查询的城市：" />
+      </view>
+    </view>
   </view>
+<view class="container">
+ 
+
+ 
 
   <view class="citytable">
     <block wx:for="{{citylist}}">

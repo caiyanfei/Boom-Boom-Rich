@@ -18,7 +18,7 @@
 </scroll-view>
 
 <view class='box'>
-     <view class='txt'>{{screenNum}}</view> 
+     <view class='txt' wx:if="{{screenNum!=null?true:false}}">{{screenNum}}</view> 
     <view capture-bind:touchstart="compute">
      <view>
        <button data-val='clear' class='boxtn btn1'>AC</button>

@@ -11,22 +11,6 @@
   <view class="cu-form-group margin-top bg-gray">
   <view class="title">您应该称呼对方为：{{call}}</view> </view>
 
-  
-	<!--<radio-group bindchange="handleChange">
-        <label class="weui-cell weui-check__label" >
-          <view class="weui-cell__hd">
-            <radio value="男生" checked="true"/>
-          </view>
-          <view class="weui-cell__bd">男</view>
-				</label>
-				<label class="weui-cell weui-check__label" >
-          <view class="weui-cell__hd">
-            <radio value="女生" checked="true"/>
-          </view>
-          <view class="weui-cell__bd">女</view>
-				</label>	
-      </radio-group>-->
-
   <view class="cu-form-group margin-top bg-gray">
     <view class="title">您的性别是： </view>
 		<switch class="switch-sex" checked></switch>

@@ -1,0 +1,3 @@
+/* pages/demo02/demo02.wxss */
+
+.txt{ display: block; padding: 3% 5%; background: #39b54a; color:black;text-align: center;}

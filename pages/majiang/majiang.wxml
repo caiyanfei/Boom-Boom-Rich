@@ -1,7 +1,77 @@
-<!--pages/majiang/majiang.wxml-->
+<!--pages/demo01/demo01.wxml-->
 <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
 	<view slot="backText">返回</view>
-	<view slot="content">麻将分数计算器</view>
+	<view slot="content">麻将分数计算</view>
 </cu-custom>
 
-<text>pages/majiang/majiang.wxml</text>
+
+<view class='box'>
+    <view>
+        <button bindtap = "click" data-con='0' class='boxtn btn' size = "mini" >一万</button>
+        <button bindtap = "click" data-con='1' class='boxtn btn' size = "mini" >二万</button>
+        <button bindtap = "click" data-con='2' class='boxtn btn' size = "mini" >三万</button>
+        <button bindtap = "click" data-con='3' class='boxtn btn' size = "mini" >四万</button>
+        <button bindtap = "click" data-con='4' class='boxtn btn' size = "mini" >五万</button>
+        <button bindtap = "click" data-con='5' class='boxtn btn' size = "mini" >六万</button>
+        <button bindtap = "click" data-con='6' class='boxtn btn' size = "mini" >七万</button>
+        <button bindtap = "click" data-con='7' class='boxtn btn' size = "mini" >八万</button>
+        <button bindtap = "click" data-con='8' class='boxtn btn' size = "mini" >九万</button>
+    </view>
+
+    <view display="flex">
+        <button bindtap = "click" data-con='9'  class='boxtn btn1' size = "mini" >一条</button>
+        <button bindtap = "click" data-con='10' class='boxtn btn1' size = "mini" >二条</button>
+        <button bindtap = "click" data-con='11' class='boxtn btn1' size = "mini" >三条</button>
+        <button bindtap = "click" data-con='12' class='boxtn btn1' size = "mini" >四条</button>
+        <button bindtap = "click" data-con='13' class='boxtn btn1' size = "mini" >五条</button>
+        <button bindtap = "click" data-con='14' class='boxtn btn1' size = "mini" >六条</button>
+        <button bindtap = "click" data-con='15' class='boxtn btn1' size = "mini" >七条</button>
+        <button bindtap = "click" data-con='16' class='boxtn btn1' size = "mini" >八条</button>
+        <button bindtap = "click" data-con='17' class='boxtn btn1' size = "mini" >九条</button>
+    </view>
+
+    <view display="flex">
+        <button bindtap = "click" data-con='18' class='boxtn btn' size = "mini">一筒</button>
+        <button bindtap = "click" data-con='19' class='boxtn btn' size = "mini">二筒</button>
+        <button bindtap = "click" data-con='20' class='boxtn btn' size = "mini">三筒</button>
+        <button bindtap = "click" data-con='21' class='boxtn btn' size = "mini">四筒</button>
+        <button bindtap = "click" data-con='22' class='boxtn btn' size = "mini">五筒</button>
+        <button bindtap = "click" data-con='23' class='boxtn btn' size = "mini">六筒</button>
+        <button bindtap = "click" data-con='24' class='boxtn btn' size = "mini">七筒</button>
+        <button bindtap = "click" data-con='25' class='boxtn btn' size = "mini">八筒</button>
+        <button bindtap = "click" data-con='26' class='boxtn btn' size = "mini">九筒</button>
+    </view>
+
+    <view display="flex">
+        <button bindtap = "click" data-con='27' class='boxtn btn1' size = "mini">东风</button>
+        <button bindtap = "click" data-con='28' class='boxtn btn1' size = "mini">西风</button>
+        <button bindtap = "click" data-con='29' class='boxtn btn1' size = "mini">南风</button>
+        <button bindtap = "click" data-con='30' class='boxtn btn1' size = "mini">北风</button>
+        <button bindtap = "click" data-con='31' class='boxtn btn1' size = "mini">红中</button>
+        <button bindtap = "click" data-con='32' class='boxtn btn1' size = "mini">白板</button>
+        <button bindtap = "click" data-con='33' class='boxtn btn1' size = "mini">发财</button>
+    </view>
+</view>
+
+<view>
+    <button bindtap = "clickBack" class='boxtn btn' size = "mini">退格</button>
+    <button bindtap = "clickClearAll" class='boxtn btn' size = "mini">清空</button>
+    <button bindtap = "clickTestTing" class='boxtn btn' size = "mini">是否听牌</button>
+    <button bindtap = "clickTestHu" class='boxtn btn' size = "mini">是否和牌</button>
+</view>
+
+<!--
+<view wx:for="{{handgroup}}" wx:for-index="key" wx:for-item="item">
+    <view>{{paizu.item}}
+    </view>
+</view>
+-->
+<view>
+    <view>当前牌组:{{content}}</view>
+    <view>听牌牌组:{{tingarrName}}</view>
+    <view>是否和/听牌: {{result}}</view>  
+</view>
+  
+
+
+  

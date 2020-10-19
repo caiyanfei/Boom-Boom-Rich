@@ -30,7 +30,7 @@
             <view class="text-grey" wx:if="{{item.id==0?true:false}}">衬衫</view>
             <view class="text-grey" wx:elif="{{item.id==1?true:false}}">衬衫</view>  
             <view class="text-grey" wx:elif="{{item.id==2?true:false}}">男鞋</view> 
-          </view>
+          </view> 
           <button class="cu-btn round bg-red shadow" data-val='shirt'wx:if="{{item.id==0?true:false}}" bindtap="tojump">查看</button> 
           <button class="cu-btn round bg-red shadow" data-val='shirt'wx:elif="{{item.id==1?true:false}}"bindtap="tojump">查看</button> 
           <button class="cu-btn round bg-red shadow"  data-val='mshoes'wx:elif="{{item.id==2?true:false}}"bindtap="tojump">查看</button>  

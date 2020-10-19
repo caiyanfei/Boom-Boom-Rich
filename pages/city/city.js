@@ -76,6 +76,24 @@ Page({
     app.setlocal('curid', app.curid);
     //that.setData({cur_id:app.curid,cur_name:that.getname(app.curid)})
     wx.navigateTo({url: '../weather/weather'});
+  },
+
+  getcity:function(e){
+    var that=this;
+    var finish=false;
+    for( var i=that.cjson.length-1;i>=0;i--){
+      if(that.cjson[i].cityname==e.detail.value){
+        that.setData({cur_name:that.cjson[i].cityname})
+        app.curid=that.cjson[i].id;
+        app.setlocal('curid',app.curid);
+        finish=true;
+        break;
+      }
+    }
+    if(finish==true){
+       wx.navigateTo({url: '../weather/weather'});
+    }
+   
   }
   
 })

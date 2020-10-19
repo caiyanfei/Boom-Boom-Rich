@@ -1,0 +1,44 @@
+<!--pages/equation/equation.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">解方程计算</view>
+</cu-custom>
+
+<view class="page-section">
+    <view class="weui-cells__title">请输入参数</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input"  bindinput="bindInput" placeholder="以空格作为分隔和结束" value='{{content}}' />
+      </view>
+    </view>
+</view>
+
+
+<view class="padding flex flex-wrap justify-between align-center bg-gray">
+    <button class="cu-btn lg bg-green shadow" bindtap = "solveEquation" >解一元二次方程</button>
+    <button class="cu-btn lg bg-olive shadow" bindtap = "solveEquations">解二元一次方程组</button>
+  </view>
+
+<view class="box">
+  <view class="txt">一元二次方程的解</view>
+  <view  class="txt">x1={{x1}} </view>
+  <view  class="txt">x2={{x2}} </view>
+  <view class="txt">二元一次方程组的解</view>
+  <view  class="txt">x={{x}} </view>
+  <view  class="txt">y={{y}} </view>
+</view>
+<view class="padding flex flex-wrap justify-between align-center bg-gray"> 
+    <button  class="cu-btn lg bg-cyan shadow" bindtap = "clearPara">清除参数</button>
+</view>
+
+<view>
+  <view>一元二次方程样例：ax^2+bx+c=d,请按顺序输入a b c d</view>
+  <view>二元一次方程组样例：a1x+b1y=c1
+                   a2x+b2y=c2
+  请按照a1 b1 c1 a2 b2 c2 的顺序输入
+  以空格作为结束</view>
+</view>
+
+
+
+  

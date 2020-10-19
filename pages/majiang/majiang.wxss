@@ -1,1 +1,38 @@
-/* pages/majiang/majiang.wxss */
+.box{
+    width:100%;
+    height: 700rpx;
+    background: #eef7f2
+  }
+  .txt{
+    color: #1a6840;
+    width: 100%;
+    height:120px;
+    font-size: 50px;
+    text-align: right;
+  }
+  .boxtn{
+    width: 45rpx;
+    height:90rpx;
+    display:block;
+    float:left;
+    border-radius: 35%;
+    line-height: 90rpx;
+    text-align: center;
+    margin-left: 3rpx;
+    margin-top: 5rpx;
+    color:#fff;
+    background: #6e8b74;
+    font-weight: bold;
+    font-size: 25rpx;
+  }
+  .btn{
+    background: #9eccab;
+  }
+  .btn1{
+    background: #b9dec9;
+    color:#000;
+  }
+  .btn2{
+    width: 180px;
+    border-radius: 40px;
+  }
